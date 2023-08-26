@@ -26,7 +26,7 @@ resource "proxmox_vm_qemu" "vm_k3s_02" {
     }
 
     os_type = "cloud-init"
-    ipconfig0 = "ip=192.168.0.171/24,gw=192.168.0.1"
+    ipconfig0 = "ip=192.168.0.172/24,gw=192.168.0.1"
     ciuser = var.vm_username
     cipassword = var.vm_password
     sshkeys = var.vm_ssh_key
