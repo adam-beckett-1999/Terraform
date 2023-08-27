@@ -8,4 +8,5 @@ terraform {
 }
 
 provider "kubernetes" {
+  host = "https://cluster_endpoint:port"
 }
