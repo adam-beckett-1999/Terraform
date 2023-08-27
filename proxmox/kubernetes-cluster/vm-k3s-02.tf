@@ -2,7 +2,7 @@ resource "proxmox_vm_qemu" "vm_k3s_02" {
     target_node = "phs-hv-01"
     vmid = "212"
     name = "VM-K3S-02"
-    tags = "app-server,kubernetes,rancher,longhorn"
+    tags = "kubernetes,portainer"
 
     clone = "UBUNTU-22.04"
     full_clone = true

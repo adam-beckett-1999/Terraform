@@ -2,7 +2,7 @@ resource "proxmox_vm_qemu" "vm_gameserver_01" {
     target_node = "phs-hv-01"
     vmid = "221"
     name = "VM-GAMESERVER-01"
-    tags = "app-server,docker,pufferpanel"
+    tags = "app-server,docker,pufferpanel,portainer"
 
     clone = "UBUNTU-22.04"
     full_clone = true

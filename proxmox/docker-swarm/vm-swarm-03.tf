@@ -2,7 +2,7 @@ resource "proxmox_vm_qemu" "vm_swarm_03" {
     target_node = "phs-hv-01"
     vmid = "203"
     name = "VM-SWARM-03"
-    tags = "app-server,docker,glusterfs"
+    tags = "docker,glusterfs,portainer"
 
     clone = "UBUNTU-22.04"
     full_clone = true
