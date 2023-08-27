@@ -21,7 +21,7 @@ resource "proxmox_vm_qemu" "vm_gameserver_01" {
     }
 
     network {
-        bridge = "vmbr0"
+        bridge = "vmbr1"
         model = "virtio"
     }
 
