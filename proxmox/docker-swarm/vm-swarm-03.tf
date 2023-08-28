@@ -9,10 +9,10 @@ resource "proxmox_vm_qemu" "vm_swarm_03" {
 
     onboot = true
     agent = 1
-    cores = 4
+    cores = 2
     sockets = 2
     cpu = "host"
-    memory = 8192
+    memory = 4096
 
     disk {
         type = "scsi"

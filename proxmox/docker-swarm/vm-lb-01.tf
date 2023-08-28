@@ -1,6 +1,6 @@
 resource "proxmox_vm_qemu" "vm_lb_01" {
     target_node = "phs-hv-01"
-    vmid = "201"
+    vmid = "200"
     name = "VM-LB-01"
     tags = "docker,glusterfs,portainer,load-balancer,reverse-proxy"
 
@@ -10,9 +10,9 @@ resource "proxmox_vm_qemu" "vm_lb_01" {
     onboot = true
     agent = 1
     cores = 4
-    sockets = 2
+    sockets = 1
     cpu = "host"
-    memory = 8192
+    memory = 4096
 
     disk {
         type = "scsi"
