@@ -1,4 +1,4 @@
-resource "vm_lb_01" {
+resource "proxmox_vm_qemu" "vm_lb_01" {
     target_node = "phs-hv-01"
     vmid = "200"
     name = "VM-LB-01"
@@ -33,7 +33,7 @@ resource "vm_lb_01" {
     nameserver = "192.168.0.210"
 }
 
-resource "vm_swarm_01" {
+resource "proxmox_vm_qemu" "vm_swarm_01" {
     target_node = "phs-hv-01"
     vmid = "201"
     name = "VM-SWARM-01"
@@ -68,7 +68,7 @@ resource "vm_swarm_01" {
     nameserver = "192.168.0.210"
 }
 
-resource "vm_swarm_02" {
+resource "proxmox_vm_qemu" "vm_swarm_02" {
     target_node = "phs-hv-01"
     vmid = "202"
     name = "VM-SWARM-02"
@@ -103,7 +103,7 @@ resource "vm_swarm_02" {
     nameserver = "192.168.0.210"
 }
 
-resource "vm_swarm_03" {
+resource "proxmox_vm_qemu" "vm_swarm_03" {
     target_node = "phs-hv-01"
     vmid = "203"
     name = "VM-SWARM-03"
