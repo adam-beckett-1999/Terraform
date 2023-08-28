@@ -17,7 +17,7 @@ resource "proxmox_vm_qemu" "vm_swarm_02" {
     disk {
         type = "scsi"
         storage = "pool-1"
-        size = "200G"
+        size = "100G"
     }
 
     network {

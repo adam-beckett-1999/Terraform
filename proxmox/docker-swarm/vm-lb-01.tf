@@ -17,7 +17,7 @@ resource "proxmox_vm_qemu" "vm_lb_01" {
     disk {
         type = "scsi"
         storage = "pool-1"
-        size = "50G"
+        size = "100G"
     }
 
     network {
