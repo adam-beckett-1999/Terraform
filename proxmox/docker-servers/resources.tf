@@ -1,7 +1,7 @@
-resource "proxmox_vm_qemu" "vm_lb_01" {
+resource "proxmox_vm_qemu" "vm_docker_proxy" {
     target_node = "phs-hv-01"
     vmid = "200"
-    name = "VM-LB-01"
+    name = "VM-DOCKER-PROXY"
     tags = "docker,glusterfs,portainer,load-balancer,reverse-proxy"
 
     clone = "UBUNTU-22.04"
@@ -9,8 +9,8 @@ resource "proxmox_vm_qemu" "vm_lb_01" {
 
     onboot = true
     agent = 1
-    cores = 4
-    sockets = 1
+    cores = 2
+    sockets = 2
     cpu = "host"
     memory = 4096
 
@@ -33,10 +33,10 @@ resource "proxmox_vm_qemu" "vm_lb_01" {
     nameserver = "192.168.0.210"
 }
 
-resource "proxmox_vm_qemu" "vm_swarm_01" {
+resource "proxmox_vm_qemu" "vm_docker_media" {
     target_node = "phs-hv-01"
     vmid = "201"
-    name = "VM-SWARM-01"
+    name = "VM-DOCKER-MEDIA"
     tags = "docker,glusterfs,portainer"
 
     clone = "UBUNTU-22.04"
@@ -44,10 +44,10 @@ resource "proxmox_vm_qemu" "vm_swarm_01" {
 
     onboot = true
     agent = 1
-    cores = 2
+    cores = 4
     sockets = 2
     cpu = "host"
-    memory = 4096
+    memory = 8192
 
     disk {
         type = "scsi"
@@ -68,10 +68,10 @@ resource "proxmox_vm_qemu" "vm_swarm_01" {
     nameserver = "192.168.0.210"
 }
 
-resource "proxmox_vm_qemu" "vm_swarm_02" {
+resource "proxmox_vm_qemu" "vm_docker_services" {
     target_node = "phs-hv-01"
     vmid = "202"
-    name = "VM-SWARM-02"
+    name = "VM-DOCKER-SERVICES"
     tags = "docker,glusterfs,portainer"
 
     clone = "UBUNTU-22.04"
@@ -79,10 +79,10 @@ resource "proxmox_vm_qemu" "vm_swarm_02" {
 
     onboot = true
     agent = 1
-    cores = 2
+    cores = 4
     sockets = 2
     cpu = "host"
-    memory = 4096
+    memory = 8192
 
     disk {
         type = "scsi"
@@ -103,10 +103,10 @@ resource "proxmox_vm_qemu" "vm_swarm_02" {
     nameserver = "192.168.0.210"
 }
 
-resource "proxmox_vm_qemu" "vm_swarm_03" {
+resource "proxmox_vm_qemu" "vm_docker_management" {
     target_node = "phs-hv-01"
     vmid = "203"
-    name = "VM-SWARM-03"
+    name = "VM-DOCKER-MANAGEMENT"
     tags = "docker,glusterfs,portainer"
 
     clone = "UBUNTU-22.04"
@@ -114,10 +114,10 @@ resource "proxmox_vm_qemu" "vm_swarm_03" {
 
     onboot = true
     agent = 1
-    cores = 2
+    cores = 4
     sockets = 2
     cpu = "host"
-    memory = 4096
+    memory = 8192
 
     disk {
         type = "scsi"
