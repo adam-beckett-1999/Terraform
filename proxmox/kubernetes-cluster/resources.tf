@@ -1,8 +1,8 @@
-resource "proxmox_vm_qemu" "vm_k3s_01" {
+resource "proxmox_vm_qemu" "vm_k3s_master_01" {
     target_node = "phs-hv-01"
-    vmid = "211"
-    name = "VM-K3S-01"
-    tags = "kubernetes,portainer"
+    vmid = "210"
+    name = "VM-K3S-MASTER-01"
+    tags = "kubernetes,portainer,master"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -33,11 +33,11 @@ resource "proxmox_vm_qemu" "vm_k3s_01" {
     nameserver = "192.168.0.210"
 }
 
-resource "proxmox_vm_qemu" "vm_k3s_02" {
+resource "proxmox_vm_qemu" "vm_k3s_worker_01" {
     target_node = "phs-hv-01"
-    vmid = "212"
-    name = "VM-K3S-02"
-    tags = "kubernetes,portainer"
+    vmid = "211"
+    name = "VM-K3S-WORKER-01"
+    tags = "kubernetes,portainer,worker"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -68,11 +68,11 @@ resource "proxmox_vm_qemu" "vm_k3s_02" {
     nameserver = "192.168.0.210"
 }
 
-resource "proxmox_vm_qemu" "vm_k3s_03" {
+resource "proxmox_vm_qemu" "vm_k3s_worker_02" {
     target_node = "phs-hv-01"
-    vmid = "213"
-    name = "VM-K3S-03"
-    tags = "kubernetes,portainer"
+    vmid = "212"
+    name = "VM-K3S-WORKER-02"
+    tags = "kubernetes,portainer,worker"
 
     clone = "UBUNTU-22.04"
     full_clone = true
