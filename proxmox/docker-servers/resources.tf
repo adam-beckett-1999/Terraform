@@ -2,7 +2,7 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     target_node = "phs-hv-01"
     vmid = "200"
     name = "VM-DOCKER-PROXY"
-    tags = "docker,glusterfs,portainer,load-balancer,reverse-proxy"
+    tags = "docker,glusterfs,portainer,reverse-proxy"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -37,7 +37,7 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     target_node = "phs-hv-01"
     vmid = "201"
     name = "VM-DOCKER-MEDIA"
-    tags = "docker,glusterfs,portainer"
+    tags = "docker,glusterfs,portainer,media"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -72,7 +72,7 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     target_node = "phs-hv-01"
     vmid = "202"
     name = "VM-DOCKER-SERVICES"
-    tags = "docker,glusterfs,portainer"
+    tags = "docker,glusterfs,portainer,services"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -107,7 +107,7 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     target_node = "phs-hv-01"
     vmid = "203"
     name = "VM-DOCKER-MANAGEMENT"
-    tags = "docker,glusterfs,portainer"
+    tags = "docker,glusterfs,portainer,management"
 
     clone = "UBUNTU-22.04"
     full_clone = true
