@@ -95,10 +95,6 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
         model = "virtio"
     }
 
-    usb {
-        host = "1cf1:0030"
-    }
-
     os_type = "cloud-init"
     ipconfig0 = "ip=192.168.0.162/24,gw=192.168.0.1"
     ciuser = var.vm_username
