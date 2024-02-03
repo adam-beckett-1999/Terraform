@@ -1,8 +1,8 @@
 resource "proxmox_vm_qemu" "vm_docker_proxy" {
     target_node = "phs-hv-01"
-    vmid = "200"
+    vmid = "100"
     name = "VM-DOCKER-PROXY"
-    tags = "docker,glusterfs,portainer,reverse-proxy"
+    tags = "docker,glusterfs,reverse-proxy"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -21,7 +21,7 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     }
 
     network {
-        bridge = "vmbr1"
+        bridge = "vmbr0"
         model = "virtio"
     }
 
@@ -30,14 +30,14 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     ciuser = var.vm_username
     cipassword = var.vm_password
     sshkeys = var.vm_ssh_key
-    nameserver = "192.168.0.210"
+    nameserver = "192.168.0.1"
 }
 
 resource "proxmox_vm_qemu" "vm_docker_media" {
     target_node = "phs-hv-01"
-    vmid = "201"
+    vmid = "101"
     name = "VM-DOCKER-MEDIA"
-    tags = "docker,glusterfs,portainer,media"
+    tags = "docker,glusterfs,media"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -56,7 +56,7 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     }
 
     network {
-        bridge = "vmbr1"
+        bridge = "vmbr0"
         model = "virtio"
     }
 
@@ -65,14 +65,14 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     ciuser = var.vm_username
     cipassword = var.vm_password
     sshkeys = var.vm_ssh_key
-    nameserver = "192.168.0.210"
+    nameserver = "192.168.0.1"
 }
 
 resource "proxmox_vm_qemu" "vm_docker_services" {
     target_node = "phs-hv-01"
-    vmid = "202"
+    vmid = "102"
     name = "VM-DOCKER-SERVICES"
-    tags = "docker,glusterfs,portainer,services"
+    tags = "docker,glusterfs,services"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -91,7 +91,7 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     }
 
     network {
-        bridge = "vmbr1"
+        bridge = "vmbr0"
         model = "virtio"
     }
 
@@ -100,14 +100,14 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     ciuser = var.vm_username
     cipassword = var.vm_password
     sshkeys = var.vm_ssh_key
-    nameserver = "192.168.0.210"
+    nameserver = "192.168.0.1"
 }
 
-resource "proxmox_vm_qemu" "vm_docker_management" {
+resource "proxmox_vm_qemu" "vm_docker_smarthome" {
     target_node = "phs-hv-01"
-    vmid = "203"
-    name = "VM-DOCKER-MANAGEMENT"
-    tags = "docker,glusterfs,portainer,management"
+    vmid = "103"
+    name = "VM-DOCKER-SMARTHOME"
+    tags = "docker,glusterfs,smart-home"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -126,7 +126,7 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     }
 
     network {
-        bridge = "vmbr1"
+        bridge = "vmbr0"
         model = "virtio"
     }
 
@@ -135,5 +135,40 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     ciuser = var.vm_username
     cipassword = var.vm_password
     sshkeys = var.vm_ssh_key
-    nameserver = "192.168.0.210"
+    nameserver = "192.168.0.1"
+}
+
+resource "proxmox_vm_qemu" "vm_docker_management" {
+    target_node = "phs-hv-01"
+    vmid = "104"
+    name = "VM-DOCKER-MANAGEMENT"
+    tags = "docker,glusterfs,management"
+
+    clone = "UBUNTU-22.04"
+    full_clone = true
+
+    onboot = true
+    agent = 1
+    cores = 4
+    sockets = 2
+    cpu = "host"
+    memory = 8192
+
+    disk {
+        type = "scsi"
+        storage = "pool-1"
+        size = "100G"
+    }
+
+    network {
+        bridge = "vmbr0"
+        model = "virtio"
+    }
+
+    os_type = "cloud-init"
+    ipconfig0 = "ip=192.168.0.164/24,gw=192.168.0.1"
+    ciuser = var.vm_username
+    cipassword = var.vm_password
+    sshkeys = var.vm_ssh_key
+    nameserver = "192.168.0.1"
 }
