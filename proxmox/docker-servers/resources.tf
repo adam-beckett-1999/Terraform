@@ -107,7 +107,7 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     target_node = "HYPERVISOR-01"
     vmid = "103"
     name = "VM-DOCKER-MANAGEMENT"
-    tags = "docker,glusterfs,management,ubuntu-2204"
+    tags = "docker,glusterfs,management,monitoring,ubuntu-2204"
 
     clone = "UBUNTU-22.04"
     full_clone = true
