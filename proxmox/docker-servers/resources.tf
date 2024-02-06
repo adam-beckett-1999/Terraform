@@ -27,6 +27,7 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
             ide0 {
                 disk {
                     storage = "local-lvm"
+                    size = 1
                 }
             }
         }
@@ -74,6 +75,7 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
             ide0 {
                 disk {
                     storage = "local-lvm"
+                    size = 1
                 }
             }
         }
@@ -121,6 +123,7 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
             ide0 {
                 disk {
                     storage = "local-lvm"
+                    size = 1
                 }
             }
         }
@@ -168,6 +171,7 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
             ide0 {
                 disk {
                     storage = "local-lvm"
+                    size = 1
                 }
             }
         }
