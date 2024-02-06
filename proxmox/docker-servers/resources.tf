@@ -23,14 +23,6 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
                 }
             }
         }
-        ide {
-            ide0 {
-                disk {
-                    storage = "local-lvm"
-                    size = 1
-                }
-            }
-        }
     }
 
     network {
@@ -68,14 +60,6 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
                 disk {
                     storage = "storage-01-iscsi"
                     size = 100
-                }
-            }
-        }
-        ide {
-            ide0 {
-                disk {
-                    storage = "local-lvm"
-                    size = 1
                 }
             }
         }
@@ -119,14 +103,6 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
                 }
             }
         }
-        ide {
-            ide0 {
-                disk {
-                    storage = "local-lvm"
-                    size = 1
-                }
-            }
-        }
     }
 
     network {
@@ -164,14 +140,6 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
                 disk {
                     storage = "storage-01-iscsi"
                     size = 100
-                }
-            }
-        }
-        ide {
-            ide0 {
-                disk {
-                    storage = "local-lvm"
-                    size = 1
                 }
             }
         }
