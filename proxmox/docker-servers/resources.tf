@@ -23,13 +23,6 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
                 }
             }
         }
-        ide {
-            ide2 {
-                disk {
-                    storage = "storage-01-iscsi"
-                }
-            }
-        }
     }
 
     network {
@@ -38,6 +31,7 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     }
 
     os_type = "cloud-init"
+    cloudinit_cdrom_storage = "storage-01-iscsi"
     ipconfig0 = "ip=192.168.0.160/24,gw=192.168.0.1"
 }
 
@@ -66,13 +60,6 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
                 }
             }
         }
-        ide {
-            ide2 {
-                disk {
-                    storage = "storage-01-iscsi"
-                }
-            }
-        }
     }
 
     network {
@@ -81,6 +68,7 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     }
 
     os_type = "cloud-init"
+    cloudinit_cdrom_storage = "storage-01-iscsi"
     ipconfig0 = "ip=192.168.0.161/24,gw=192.168.0.1"
 }
 
@@ -109,13 +97,6 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
                 }
             }
         }
-        ide {
-            ide2 {
-                disk {
-                    storage = "storage-01-iscsi"
-                }
-            }
-        }
     }
 
     network {
@@ -124,6 +105,7 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     }
 
     os_type = "cloud-init"
+    cloudinit_cdrom_storage = "storage-01-iscsi"
     ipconfig0 = "ip=192.168.0.162/24,gw=192.168.0.1"
 }
 
@@ -152,13 +134,6 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
                 }
             }
         }
-        ide {
-            ide2 {
-                disk {
-                    storage = "storage-01-iscsi"
-                }
-            }
-        }
     }
 
     network {
@@ -167,5 +142,6 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     }
 
     os_type = "cloud-init"
+    cloudinit_cdrom_storage = "storage-01-iscsi"
     ipconfig0 = "ip=192.168.0.163/24,gw=192.168.0.1"
 }
