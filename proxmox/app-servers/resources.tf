@@ -2,7 +2,7 @@ resource "proxmox_vm_qemu" "vm_gameserver_management" {
     target_node = "phs-hv-01"
     vmid = "200"
     name = "VM-GAMESERVER-MANAGEMENT"
-    tags = "app-server,game-server,docker,amp,pterodactyl"
+    tags = "app-server,game-server,docker,cubecoders-amp,pterodactyl-panel"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -35,7 +35,7 @@ resource "proxmox_vm_qemu" "vm_gameserver_management" {
 
 resource "proxmox_vm_qemu" "vm_gameserver_node_01" {
     target_node = "phs-hv-01"
-    vmid = "200"
+    vmid = "201"
     name = "VM-GAMESERVER-NODE-01"
     tags = "app-server,game-server,docker,pterodactyl-wings"
 
@@ -70,7 +70,7 @@ resource "proxmox_vm_qemu" "vm_gameserver_node_01" {
 
 resource "proxmox_vm_qemu" "vm_gameserver_node_02" {
     target_node = "phs-hv-01"
-    vmid = "200"
+    vmid = "202"
     name = "VM-GAMESERVER-NODE-02"
     tags = "app-server,game-server,docker,pterodactyl-wings"
 
