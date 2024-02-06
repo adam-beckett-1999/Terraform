@@ -4,7 +4,7 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     name = "VM-DOCKER-PROXY"
     tags = "docker,glusterfs,reverse-proxy,authentication,ubuntu-2204"
 
-    clone = "UBUNTU-22.04"
+    clone = "UBUNTU-2204-TEMPLATE"
     full_clone = true
 
     onboot = true
@@ -35,7 +35,7 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     name = "VM-DOCKER-MEDIA"
     tags = "docker,glusterfs,media,ubuntu-2204"
 
-    clone = "UBUNTU-22.04"
+    clone = "UBUNTU-2204-TEMPLATE"
     full_clone = true
 
     onboot = true
@@ -66,7 +66,7 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     name = "VM-DOCKER-SERVICES"
     tags = "docker,glusterfs,services,ubuntu-2204"
 
-    clone = "UBUNTU-22.04"
+    clone = "UBUNTU-2204-TEMPLATE"
     full_clone = true
 
     onboot = true
@@ -97,7 +97,7 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     name = "VM-DOCKER-MANAGEMENT"
     tags = "docker,glusterfs,management,monitoring,ubuntu-2204"
 
-    clone = "UBUNTU-22.04"
+    clone = "UBUNTU-2204-TEMPLATE"
     full_clone = true
 
     onboot = true
