@@ -2,14 +2,14 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     target_node = "HYPERVISOR-01"
     vmid = "100"
     name = "VM-DOCKER-PROXY"
-    tags = "docker,glusterfs,reverse-proxy,ubuntu-2204"
+    tags = "docker,glusterfs,reverse-proxy,authentication,ubuntu-2204"
 
     clone = "UBUNTU-22.04"
     full_clone = true
 
     onboot = true
     agent = 1
-    cores = 2
+    cores = 4
     sockets = 2
     cpu = "host"
     memory = 8192
