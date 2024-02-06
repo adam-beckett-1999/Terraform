@@ -31,8 +31,11 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     }
 
     os_type = "cloud-init"
-    cloudinit_cdrom_storage = "storage-01-iscsi"
+    ciuser = var.vm_username
+    cipassword = var.vm_password
+    sshkeys = var.vm_ssh_key
     ipconfig0 = "ip=192.168.0.160/24,gw=192.168.0.1"
+    nameserver = "192.168.0.1"
 }
 
 resource "proxmox_vm_qemu" "vm_docker_media" {
@@ -68,8 +71,11 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     }
 
     os_type = "cloud-init"
-    cloudinit_cdrom_storage = "storage-01-iscsi"
+    ciuser = var.vm_username
+    cipassword = var.vm_password
+    sshkeys = var.vm_ssh_key
     ipconfig0 = "ip=192.168.0.161/24,gw=192.168.0.1"
+    nameserver = "192.168.0.1"
 }
 
 resource "proxmox_vm_qemu" "vm_docker_services" {
@@ -105,8 +111,11 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     }
 
     os_type = "cloud-init"
-    cloudinit_cdrom_storage = "storage-01-iscsi"
+    ciuser = var.vm_username
+    cipassword = var.vm_password
+    sshkeys = var.vm_ssh_key
     ipconfig0 = "ip=192.168.0.162/24,gw=192.168.0.1"
+    nameserver = "192.168.0.1"
 }
 
 resource "proxmox_vm_qemu" "vm_docker_management" {
@@ -142,6 +151,9 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     }
 
     os_type = "cloud-init"
-    cloudinit_cdrom_storage = "storage-01-iscsi"
+    ciuser = var.vm_username
+    cipassword = var.vm_password
+    sshkeys = var.vm_ssh_key
     ipconfig0 = "ip=192.168.0.163/24,gw=192.168.0.1"
+    nameserver = "192.168.0.1"
 }
