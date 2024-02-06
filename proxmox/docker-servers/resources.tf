@@ -17,8 +17,10 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     disks {
         scsi {
             scsi0 {
-                storage = "storage-01-iscsi"
-                size = "100G"
+                disk {
+                    storage = "storage-01-iscsi"
+                    size = "100G"
+                }
             }
         }
     }
@@ -51,8 +53,10 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     disks {
         scsi {
             scsi0 {
-                storage = "storage-01-iscsi"
-                size = "100G"
+                disk {
+                    storage = "storage-01-iscsi"
+                    size = "100G"
+                }
             }
         }
     }
@@ -85,8 +89,10 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     disks {
         scsi {
             scsi0 {
-                storage = "storage-01-iscsi"
-                size = "100G"
+                disk {
+                    storage = "storage-01-iscsi"
+                    size = "100G"
+                }
             }
         }
     }
@@ -119,8 +125,10 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     disks {
         scsi {
             scsi0 {
-                storage = "storage-01-iscsi"
-                size = "100G"
+                disk {
+                    storage = "storage-01-iscsi"
+                    size = "100G"
+                }
             }
         }
     }
