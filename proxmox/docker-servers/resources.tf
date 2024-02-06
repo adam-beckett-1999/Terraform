@@ -1,8 +1,8 @@
 resource "proxmox_vm_qemu" "vm_docker_proxy" {
-    target_node = "phs-hv-01"
+    target_node = "HYPERVISOR-01"
     vmid = "100"
     name = "VM-DOCKER-PROXY"
-    tags = "docker,glusterfs,reverse-proxy"
+    tags = "docker,glusterfs,reverse-proxy,ubuntu-2204"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -12,11 +12,11 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     cores = 2
     sockets = 2
     cpu = "host"
-    memory = 4096
+    memory = 8192
 
     disk {
         type = "scsi"
-        storage = "pool-1"
+        storage = "storage-01-iscsi"
         size = "100G"
     }
 
@@ -34,10 +34,10 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
 }
 
 resource "proxmox_vm_qemu" "vm_docker_media" {
-    target_node = "phs-hv-01"
+    target_node = "HYPERVISOR-01"
     vmid = "101"
     name = "VM-DOCKER-MEDIA"
-    tags = "docker,glusterfs,media"
+    tags = "docker,glusterfs,media,ubuntu-2204"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -51,7 +51,7 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
 
     disk {
         type = "scsi"
-        storage = "pool-1"
+        storage = "storage-01-iscsi"
         size = "100G"
     }
 
@@ -69,10 +69,10 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
 }
 
 resource "proxmox_vm_qemu" "vm_docker_services" {
-    target_node = "phs-hv-01"
+    target_node = "HYPERVISOR-01"
     vmid = "102"
     name = "VM-DOCKER-SERVICES"
-    tags = "docker,glusterfs,services"
+    tags = "docker,glusterfs,services,ubuntu-2204"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -86,7 +86,7 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
 
     disk {
         type = "scsi"
-        storage = "pool-1"
+        storage = "storage-01-iscsi"
         size = "100G"
     }
 
@@ -103,11 +103,11 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     nameserver = "192.168.0.1"
 }
 
-resource "proxmox_vm_qemu" "vm_docker_smarthome" {
-    target_node = "phs-hv-01"
+resource "proxmox_vm_qemu" "vm_docker_management" {
+    target_node = "HYPERVISOR-01"
     vmid = "103"
-    name = "VM-DOCKER-SMARTHOME"
-    tags = "docker,glusterfs,smart-home"
+    name = "VM-DOCKER-MANAGEMENT"
+    tags = "docker,glusterfs,management,ubuntu-2204"
 
     clone = "UBUNTU-22.04"
     full_clone = true
@@ -121,7 +121,7 @@ resource "proxmox_vm_qemu" "vm_docker_smarthome" {
 
     disk {
         type = "scsi"
-        storage = "pool-1"
+        storage = "storage-01-iscsi"
         size = "100G"
     }
 
@@ -132,41 +132,6 @@ resource "proxmox_vm_qemu" "vm_docker_smarthome" {
 
     os_type = "cloud-init"
     ipconfig0 = "ip=192.168.0.163/24,gw=192.168.0.1"
-    ciuser = var.vm_username
-    cipassword = var.vm_password
-    sshkeys = var.vm_ssh_key
-    nameserver = "192.168.0.1"
-}
-
-resource "proxmox_vm_qemu" "vm_docker_management" {
-    target_node = "phs-hv-01"
-    vmid = "104"
-    name = "VM-DOCKER-MANAGEMENT"
-    tags = "docker,glusterfs,management"
-
-    clone = "UBUNTU-22.04"
-    full_clone = true
-
-    onboot = true
-    agent = 1
-    cores = 4
-    sockets = 2
-    cpu = "host"
-    memory = 8192
-
-    disk {
-        type = "scsi"
-        storage = "pool-1"
-        size = "100G"
-    }
-
-    network {
-        bridge = "vmbr0"
-        model = "virtio"
-    }
-
-    os_type = "cloud-init"
-    ipconfig0 = "ip=192.168.0.164/24,gw=192.168.0.1"
     ciuser = var.vm_username
     cipassword = var.vm_password
     sshkeys = var.vm_ssh_key
