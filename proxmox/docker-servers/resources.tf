@@ -44,7 +44,6 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
             }
         }
         user_account {
-            keys = var.vm_ssh_key
             username = var.vm_username
             password = var.vm_password
         }
@@ -96,7 +95,6 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
             }
         }
         user_account {
-            keys = var.vm_ssh_key
             username = var.vm_username
             password = var.vm_password
         }
@@ -148,7 +146,6 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
             }
         }
         user_account {
-            keys = var.vm_ssh_key
             username = var.vm_username
             password = var.vm_password
         }
@@ -200,7 +197,6 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
             }
         }
         user_account {
-            keys = var.vm_ssh_key
             username = var.vm_username
             password = var.vm_password
         }

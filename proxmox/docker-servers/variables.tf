@@ -13,6 +13,3 @@ variable "vm_username" {
 variable "vm_password" {
   type = string
 }
-variable "vm_ssh_key" {
-  type = string
-}
