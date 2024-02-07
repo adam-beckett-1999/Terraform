@@ -14,15 +14,9 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     cpu = "host"
     memory = 8192
 
-    disks {
-        scsi {
-            scsi0 {
-                disk {
-                    storage = "storage-01-iscsi"
-                    size = 100
-                }
-            }
-        }
+    disk {
+        storage = "storage-01-iscsi"
+        size = 100
     }
 
     network {
@@ -54,15 +48,9 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     cpu = "host"
     memory = 8192
 
-    disks {
-        scsi {
-            scsi0 {
-                disk {
-                    storage = "storage-01-iscsi"
-                    size = 100
-                }
-            }
-        }
+    disk {
+        storage = "storage-01-iscsi"
+        size = 100
     }
 
     network {
@@ -94,15 +82,9 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     cpu = "host"
     memory = 8192
 
-    disks {
-        scsi {
-            scsi0 {
-                disk {
-                    storage = "storage-01-iscsi"
-                    size = 100
-                }
-            }
-        }
+    disk {
+        storage = "storage-01-iscsi"
+        size = 100
     }
 
     network {
@@ -134,15 +116,9 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     cpu = "host"
     memory = 8192
 
-    disks {
-        scsi {
-            scsi0 {
-                disk {
-                    storage = "storage-01-iscsi"
-                    size = 100
-                }
-            }
-        }
+    disk {
+        storage = "storage-01-iscsi"
+        size = 100
     }
 
     network {
