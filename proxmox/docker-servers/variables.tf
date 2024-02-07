@@ -7,9 +7,3 @@ variable "proxmox_username" {
 variable "proxmox_password" {
   type = string
 }
-variable "vm_username" {
-  type = string
-}
-variable "vm_password" {
-  type = string
-}

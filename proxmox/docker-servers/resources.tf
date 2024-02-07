@@ -33,19 +33,11 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
     initialization {
         datastore_id = "local-lvm"
         interface = "ide0"
-        dns {
-            domain = "hyvecloud.local"
-            server = "192.168.0.1"
-        }
         ip_config {
             ipv4 {
                 address = "192.168.0.160/24"
                 gateway = "192.168.0.1"
             }
-        }
-        user_account {
-            username = var.vm_username
-            password = var.vm_password
         }
     }
 }
@@ -84,19 +76,11 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     initialization {
         datastore_id = "local-lvm"
         interface = "ide0"
-        dns {
-            domain = "hyvecloud.local"
-            server = "192.168.0.1"
-        }
         ip_config {
             ipv4 {
                 address = "192.168.0.161/24"
                 gateway = "192.168.0.1"
             }
-        }
-        user_account {
-            username = var.vm_username
-            password = var.vm_password
         }
     }
 }
@@ -135,19 +119,11 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     initialization {
         datastore_id = "local-lvm"
         interface = "ide0"
-        dns {
-            domain = "hyvecloud.local"
-            server = "192.168.0.1"
-        }
         ip_config {
             ipv4 {
                 address = "192.168.0.162/24"
                 gateway = "192.168.0.1"
             }
-        }
-        user_account {
-            username = var.vm_username
-            password = var.vm_password
         }
     }
 }
@@ -186,19 +162,11 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
     initialization {
         datastore_id = "local-lvm"
         interface = "ide0"
-        dns {
-            domain = "hyvecloud.local"
-            server = "192.168.0.1"
-        }
         ip_config {
             ipv4 {
                 address = "192.168.0.163/24"
                 gateway = "192.168.0.1"
             }
-        }
-        user_account {
-            username = var.vm_username
-            password = var.vm_password
         }
     }
 }
