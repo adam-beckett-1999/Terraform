@@ -2,9 +2,9 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
     name = "VM-DOCKER-PROXY"
     node_name = "HYPERVISOR-01"
     vm_id = 100
-    tags = ["docker", "glusterfs", "reverse-proxy", "authentication", "ubuntu-2204"]
+    tags = ["docker", "glusterfs", "ubuntu-2204"]
     on_boot = true
-    started = true
+    started = false
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -45,9 +45,9 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     name = "VM-DOCKER-MEDIA"
     node_name = "HYPERVISOR-01"
     vm_id = 101
-    tags = ["docker", "glusterfs", "media", "ubuntu-2204"]
+    tags = ["docker", "glusterfs", "ubuntu-2204"]
     on_boot = true
-    started = true
+    started = false
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -88,9 +88,9 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     name = "VM-DOCKER-SERVICES"
     node_name = "HYPERVISOR-01"
     vm_id = 102
-    tags = ["docker", "glusterfs", "services", "ubuntu-2204"]
+    tags = ["docker", "glusterfs", "ubuntu-2204"]
     on_boot = true
-    started = true
+    started = false
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -131,9 +131,9 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
     name = "VM-DOCKER-MANAGEMENT"
     node_name = "HYPERVISOR-01"
     vm_id = 103
-    tags = ["docker", "glusterfs", "management", "portainer", "ubuntu-2204"]
+    tags = ["docker", "glusterfs", "portainer", "ubuntu-2204"]
     on_boot = true
-    started = true
+    started = false
     keyboard_layout = "en-gb"
     agent {
         enabled = true
