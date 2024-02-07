@@ -20,7 +20,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
     }
     disk {
         datastore_id = "storage-01-iscsi"
-        interface = "scsi"
+        interface = "scsi0"
         size = 100
     }
     memory {
@@ -63,7 +63,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     }
     disk {
         datastore_id = "storage-01-iscsi"
-        interface = "scsi"
+        interface = "scsi0"
         size = 100
     }
     memory {
@@ -106,7 +106,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     }
     disk {
         datastore_id = "storage-01-iscsi"
-        interface = "scsi"
+        interface = "scsi0"
         size = 100
     }
     memory {
@@ -149,7 +149,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
     }
     disk {
         datastore_id = "storage-01-iscsi"
-        interface = "scsi"
+        interface = "scsi0"
         size = 100
     }
     memory {
