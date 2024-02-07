@@ -1,4 +1,4 @@
-variable "proxmox_api_url" {
+variable "proxmox_url" {
   type = string
 }
 variable "proxmox_username" {
