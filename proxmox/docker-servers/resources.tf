@@ -15,6 +15,7 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     memory = 8192
 
     disk {
+        type = "scsi"
         storage = "storage-01-iscsi"
         size = 100
     }
@@ -49,6 +50,7 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     memory = 8192
 
     disk {
+        type = "scsi"
         storage = "storage-01-iscsi"
         size = 100
     }
@@ -83,6 +85,7 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     memory = 8192
 
     disk {
+        type = "scsi"
         storage = "storage-01-iscsi"
         size = 100
     }
@@ -117,6 +120,7 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     memory = 8192
 
     disk {
+        type = "scsi"
         storage = "storage-01-iscsi"
         size = 100
     }
