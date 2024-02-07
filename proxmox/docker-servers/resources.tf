@@ -4,7 +4,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
     vm_id = 100
     tags = ["docker", "glusterfs", "reverse-proxy", "authentication", "ubuntu-2204"]
     on_boot = true
-    started = false
+    started = true
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -47,7 +47,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     vm_id = 101
     tags = ["docker", "glusterfs", "media", "ubuntu-2204"]
     on_boot = true
-    started = false
+    started = true
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -90,7 +90,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     vm_id = 102
     tags = ["docker", "glusterfs", "services", "ubuntu-2204"]
     on_boot = true
-    started = false
+    started = true
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -133,7 +133,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
     vm_id = 103
     tags = ["docker", "glusterfs", "management", "portainer", "ubuntu-2204"]
     on_boot = true
-    started = false
+    started = true
     keyboard_layout = "en-gb"
     agent {
         enabled = true
