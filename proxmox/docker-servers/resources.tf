@@ -1,4 +1,4 @@
-resource "proxmox_vm_qemu" "vm_docker_proxy" {
+resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
     name = "VM-DOCKER-PROXY"
     node_name = "HYPERVISOR-01"
     vm_id = 100
@@ -50,7 +50,7 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
         }
     }
 }
-resource "proxmox_vm_qemu" "vm_docker_media" {
+resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     name = "VM-DOCKER-MEDIA"
     node_name = "HYPERVISOR-01"
     vm_id = 101
@@ -102,7 +102,7 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
         }
     }
 }
-resource "proxmox_vm_qemu" "vm_docker_services" {
+resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     name = "VM-DOCKER-SERVICES"
     node_name = "HYPERVISOR-01"
     vm_id = 102
@@ -154,7 +154,7 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
         }
     }
 }
-resource "proxmox_vm_qemu" "vm_docker_management" {
+resource "proxmox_virtual_environment_vm" "vm_docker_management" {
     name = "VM-DOCKER-MANAGEMENT"
     node_name = "HYPERVISOR-01"
     vm_id = 103
