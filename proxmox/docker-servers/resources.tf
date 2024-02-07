@@ -12,7 +12,6 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
     clone {
         vm_id = 9000
         full = true
-        node_name = "HYPERVISOR-01"
     }
     cpu {
         cores = 4
@@ -55,7 +54,6 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     clone {
         vm_id = 9000
         full = true
-        node_name = "HYPERVISOR-01"
     }
     cpu {
         cores = 4
@@ -98,7 +96,6 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     clone {
         vm_id = 9000
         full = true
-        node_name = "HYPERVISOR-01"
     }
     cpu {
         cores = 4
@@ -141,7 +138,6 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
     clone {
         vm_id = 9000
         full = true
-        node_name = "HYPERVISOR-01"
     }
     cpu {
         cores = 4
