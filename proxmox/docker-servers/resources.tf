@@ -17,7 +17,7 @@ resource "proxmox_vm_qemu" "vm_docker_proxy" {
     disk {
         type = "scsi"
         storage = "storage-01-iscsi"
-        size = 100
+        size = 100G
     }
 
     network {
@@ -52,7 +52,7 @@ resource "proxmox_vm_qemu" "vm_docker_media" {
     disk {
         type = "scsi"
         storage = "storage-01-iscsi"
-        size = 100
+        size = 100G
     }
 
     network {
@@ -87,7 +87,7 @@ resource "proxmox_vm_qemu" "vm_docker_services" {
     disk {
         type = "scsi"
         storage = "storage-01-iscsi"
-        size = 100
+        size = 100G
     }
 
     network {
@@ -122,7 +122,7 @@ resource "proxmox_vm_qemu" "vm_docker_management" {
     disk {
         type = "scsi"
         storage = "storage-01-iscsi"
-        size = 100
+        size = 100G
     }
 
     network {
