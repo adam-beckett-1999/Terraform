@@ -1,4 +1,4 @@
-resource "proxmox_virtual_environment_vm" "vm_docker_server-01" {
+resource "proxmox_virtual_environment_vm" "vm_docker_server_01" {
     name = "VM-DOCKER-SERVER-01"
     node_name = "HYPERVISOR-01"
     vm_id = 101
@@ -124,7 +124,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_server_03" {
         }
     }
 }
-resource "proxmox_virtual_environment_vm" "vm_docker_server-04" {
+resource "proxmox_virtual_environment_vm" "vm_docker_server_04" {
     name = "VM-DOCKER-SERVER-04"
     node_name = "HYPERVISOR-01"
     vm_id = 104
