@@ -10,7 +10,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
         enabled = true
     }
     clone {
-        vm_id = 9000
+        vm_id = 10000
         full = true
     }
     cpu {
@@ -52,7 +52,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
         enabled = true
     }
     clone {
-        vm_id = 9000
+        vm_id = 10000
         full = true
     }
     cpu {
@@ -94,7 +94,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
         enabled = true
     }
     clone {
-        vm_id = 9000
+        vm_id = 10000
         full = true
     }
     cpu {
@@ -136,7 +136,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
         enabled = true
     }
     clone {
-        vm_id = 9000
+        vm_id = 10000
         full = true
     }
     cpu {
@@ -178,7 +178,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
         enabled = true
     }
     clone {
-        vm_id = 9000
+        vm_id = 10000
         full = true
     }
     cpu {
