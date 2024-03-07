@@ -1,5 +1,5 @@
-resource "proxmox_virtual_environment_vm" "vm_docker_server_01" {
-    name = "VM-DOCKER-SERVER-01"
+resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
+    name = "VM-DOCKER-PROXY"
     node_name = "HYPERVISOR-01"
     vm_id = 101
     tags = ["docker", "glusterfs", "ubuntu-2204"]
@@ -14,7 +14,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_server_01" {
         full = true
     }
     cpu {
-        cores = 4
+        cores = 8
         sockets = 2
     }
     disk {
@@ -40,8 +40,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_server_01" {
         }
     }
 }
-resource "proxmox_virtual_environment_vm" "vm_docker_server_02" {
-    name = "VM-DOCKER-SERVER-02"
+resource "proxmox_virtual_environment_vm" "vm_docker_management" {
+    name = "VM-DOCKER-MANAGEMENT"
     node_name = "HYPERVISOR-01"
     vm_id = 102
     tags = ["docker", "glusterfs", "ubuntu-2204"]
@@ -56,7 +56,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_server_02" {
         full = true
     }
     cpu {
-        cores = 4
+        cores = 8
         sockets = 2
     }
     disk {
@@ -82,8 +82,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_server_02" {
         }
     }
 }
-resource "proxmox_virtual_environment_vm" "vm_docker_server_03" {
-    name = "VM-DOCKER-SERVER-03"
+resource "proxmox_virtual_environment_vm" "vm_docker_media" {
+    name = "VM-DOCKER-MEDIA"
     node_name = "HYPERVISOR-01"
     vm_id = 103
     tags = ["docker", "glusterfs", "ubuntu-2204"]
@@ -98,7 +98,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_server_03" {
         full = true
     }
     cpu {
-        cores = 4
+        cores = 8
         sockets = 2
     }
     disk {
@@ -124,8 +124,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_server_03" {
         }
     }
 }
-resource "proxmox_virtual_environment_vm" "vm_docker_server_04" {
-    name = "VM-DOCKER-SERVER-04"
+resource "proxmox_virtual_environment_vm" "vm_docker_services" {
+    name = "VM-DOCKER-SERVICES"
     node_name = "HYPERVISOR-01"
     vm_id = 104
     tags = ["docker", "glusterfs", "portainer", "ubuntu-2204"]
@@ -140,7 +140,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_server_04" {
         full = true
     }
     cpu {
-        cores = 4
+        cores = 8
         sockets = 2
     }
     disk {
