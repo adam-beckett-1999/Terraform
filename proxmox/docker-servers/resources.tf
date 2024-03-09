@@ -29,10 +29,12 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
     network_device {
         bridge = "vmbr0"
         model = "virtio"
+        mac_address = "BC:24:11:1B:55:7A"
     }
     network_device {
         bridge = "vmbr1"
         model = "virtio"
+        mac_address = "BC:24:11:BC:9E:DA"
     }
     initialization {
         datastore_id = "local-lvm"
@@ -80,10 +82,12 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
     network_device {
         bridge = "vmbr0"
         model = "virtio"
+        mac_address = "BC:24:11:28:0A:42"
     }
     network_device {
         bridge = "vmbr1"
         model = "virtio"
+        mac_address = "BC:24:11:CA:FC:E6"
     }
     initialization {
         datastore_id = "local-lvm"
@@ -130,10 +134,12 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     network_device {
         bridge = "vmbr0"
         model = "virtio"
+        mac_address = "BC:24:11:7C:B6:23"
     }
     network_device {
         bridge = "vmbr1"
         model = "virtio"
+        mac_address = "BC:24:11:BA:42:52"
     }
     initialization {
         datastore_id = "local-lvm"
@@ -180,10 +186,12 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     network_device {
         bridge = "vmbr0"
         model = "virtio"
+        mac_address = "BC:24:11:C3:E0:98"
     }
     network_device {
         bridge = "vmbr1"
         model = "virtio"
+        mac_address = "BC:24:11:A0:08:46"
     }
     initialization {
         datastore_id = "local-lvm"
