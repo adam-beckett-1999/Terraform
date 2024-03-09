@@ -2,7 +2,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
     name = "VM-DOCKER-PROXY"
     node_name = "HYPERVISOR-01"
     vm_id = 101
-    tags = ["docker", "glusterfs", "webmin", "ubuntu-2204"]
+    tags = ["docker", "glusterfs", "webmin", "ubuntu-22.04"]
     description = "Docker Host, with GlusterFS distributed filesystem and Webmin for management. This node runs the reverse proxy and associated services."
     on_boot = true
     started = false
@@ -53,7 +53,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
     name = "VM-DOCKER-MANAGEMENT"
     node_name = "HYPERVISOR-01"
     vm_id = 102
-    tags = ["docker", "glusterfs", "webmin", "ubuntu-2204"]
+    tags = ["docker", "glusterfs", "webmin", "ubuntu-22.04"]
     description = "Docker Host, with GlusterFS distributed filesystem and Webmin for management. This node runs the management and monitoring services for the network."
     on_boot = true
     started = false
@@ -104,7 +104,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     name = "VM-DOCKER-MEDIA"
     node_name = "HYPERVISOR-01"
     vm_id = 103
-    tags = ["docker", "glusterfs", "webmin", "ubuntu-2204"]
+    tags = ["docker", "glusterfs", "webmin", "ubuntu-22.04"]
     on_boot = true
     started = false
     keyboard_layout = "en-gb"
@@ -154,7 +154,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     name = "VM-DOCKER-SERVICES"
     node_name = "HYPERVISOR-01"
     vm_id = 104
-    tags = ["docker", "glusterfs", "webmin", "ubuntu-2204"]
+    tags = ["docker", "glusterfs", "webmin", "ubuntu-22.04"]
     on_boot = true
     started = false
     keyboard_layout = "en-gb"
