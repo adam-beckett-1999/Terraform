@@ -109,6 +109,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     node_name = "HYPERVISOR-01"
     vm_id = 103
     tags = ["docker", "glusterfs", "webmin", "ubuntu-22.04"]
+    description = "Docker Host, with GlusterFS distributed filesystem and Webmin for management. This node runs media hosting, serving and management services for the network."
     on_boot = true
     started = false
     keyboard_layout = "en-gb"
@@ -161,6 +162,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     node_name = "HYPERVISOR-01"
     vm_id = 104
     tags = ["docker", "glusterfs", "webmin", "ubuntu-22.04"]
+    description = "Docker Host, with GlusterFS distributed filesystem and Webmin for management. This node runs various web-services and hosted applications."
     on_boot = true
     started = false
     keyboard_layout = "en-gb"
