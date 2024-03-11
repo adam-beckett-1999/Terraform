@@ -44,6 +44,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
                 address = "192.168.10.161/24"
                 gateway = "192.168.10.1"
             }
+        }
+        ip_config {
             ipv4 {
                 address = "192.168.20.161/24"
                 gateway = "192.168.20.1"
@@ -97,6 +99,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
                 address = "192.168.10.162/24"
                 gateway = "192.168.10.1"
             }
+        }
+        ip_config {
             ipv4 {
                 address = "192.168.20.162/24"
                 gateway = "192.168.20.1"
@@ -150,6 +154,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
                 address = "192.168.10.163/24"
                 gateway = "192.168.10.1"
             }
+        }
+        ip_config {
             ipv4 {
                 address = "192.168.20.163/24"
                 gateway = "192.168.20.1"
@@ -203,6 +209,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
                 address = "192.168.10.164/24"
                 gateway = "192.168.10.1"
             }
+        }
+        ip_config {
             ipv4 {
                 address = "192.168.20.164/24"
                 gateway = "192.168.20.1"
