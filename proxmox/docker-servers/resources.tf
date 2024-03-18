@@ -19,7 +19,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
         sockets = 2
     }
     disk {
-        datastore_id = "storage-01-iscsi"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "scsi0"
         size = 100
     }
@@ -44,6 +44,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_proxy" {
                 address = "192.168.10.161/24"
                 gateway = "192.168.10.1"
             }
+        }
+        ip_config {
             ipv4 {
                 address = "192.168.20.161/24"
                 gateway = "192.168.20.1"
@@ -72,7 +74,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
         sockets = 2
     }
     disk {
-        datastore_id = "storage-01-iscsi"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "scsi0"
         size = 100
     }
@@ -97,6 +99,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_management" {
                 address = "192.168.10.162/24"
                 gateway = "192.168.10.1"
             }
+        }
+        ip_config {
             ipv4 {
                 address = "192.168.20.162/24"
                 gateway = "192.168.20.1"
@@ -109,6 +113,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
     node_name = "HYPERVISOR-01"
     vm_id = 103
     tags = ["docker", "glusterfs", "webmin", "ubuntu-22.04"]
+    description = "Docker Host, with GlusterFS distributed filesystem and Webmin for management. This node runs media hosting, serving and management services for the network."
     on_boot = true
     started = false
     keyboard_layout = "en-gb"
@@ -124,7 +129,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
         sockets = 2
     }
     disk {
-        datastore_id = "storage-01-iscsi"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "scsi0"
         size = 100
     }
@@ -149,6 +154,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_media" {
                 address = "192.168.10.163/24"
                 gateway = "192.168.10.1"
             }
+        }
+        ip_config {
             ipv4 {
                 address = "192.168.20.163/24"
                 gateway = "192.168.20.1"
@@ -161,6 +168,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
     node_name = "HYPERVISOR-01"
     vm_id = 104
     tags = ["docker", "glusterfs", "webmin", "ubuntu-22.04"]
+    description = "Docker Host, with GlusterFS distributed filesystem and Webmin for management. This node runs various web-services and hosted applications."
     on_boot = true
     started = false
     keyboard_layout = "en-gb"
@@ -176,7 +184,7 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
         sockets = 2
     }
     disk {
-        datastore_id = "storage-01-iscsi"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "scsi0"
         size = 100
     }
@@ -201,6 +209,8 @@ resource "proxmox_virtual_environment_vm" "vm_docker_services" {
                 address = "192.168.10.164/24"
                 gateway = "192.168.10.1"
             }
+        }
+        ip_config {
             ipv4 {
                 address = "192.168.20.164/24"
                 gateway = "192.168.20.1"
