@@ -1,7 +1,7 @@
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
     name = "VM-K3S-SERVER-01"
     node_name = "HYPERVISOR-02"
-    vm_id = 201
+    vm_id = 301
     tags = ["kubernetes", "master", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = false
@@ -10,7 +10,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
         enabled = true
     }
     clone {
-        vm_id = 10000
+        vm_id = 5001
         full = true
     }
     cpu {
@@ -18,7 +18,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
         sockets = 2
     }
     disk {
-        datastore_id = "storage-01-iscsi"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "scsi0"
         size = 100
     }
@@ -30,12 +30,12 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
         model = "virtio"
     }
     initialization {
-        datastore_id = "local-lvm"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.0.171/24"
-                gateway = "192.168.0.1"
+                address = "192.168.10.181/24"
+                gateway = "192.168.10.1"
             }
         }
     }
@@ -43,7 +43,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
     name = "VM-K3S-SERVER-02"
     node_name = "HYPERVISOR-02"
-    vm_id = 202
+    vm_id = 302
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = false
@@ -52,7 +52,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
         enabled = true
     }
     clone {
-        vm_id = 10000
+        vm_id = 5001
         full = true
     }
     cpu {
@@ -60,7 +60,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
         sockets = 2
     }
     disk {
-        datastore_id = "storage-01-iscsi"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "scsi0"
         size = 100
     }
@@ -72,12 +72,12 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
         model = "virtio"
     }
     initialization {
-        datastore_id = "local-lvm"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.0.172/24"
-                gateway = "192.168.0.1"
+                address = "192.168.10.182/24"
+                gateway = "192.168.10.1"
             }
         }
     }
@@ -85,7 +85,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
     name = "VM-K3S-SERVER-03"
     node_name = "HYPERVISOR-02"
-    vm_id = 203
+    vm_id = 303
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = false
@@ -94,7 +94,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
         enabled = true
     }
     clone {
-        vm_id = 10000
+        vm_id = 5001
         full = true
     }
     cpu {
@@ -102,7 +102,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
         sockets = 2
     }
     disk {
-        datastore_id = "storage-01-iscsi"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "scsi0"
         size = 100
     }
@@ -114,12 +114,12 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
         model = "virtio"
     }
     initialization {
-        datastore_id = "local-lvm"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.0.173/24"
-                gateway = "192.168.0.1"
+                address = "192.168.10.183/24"
+                gateway = "192.168.10.1"
             }
         }
     }
@@ -127,7 +127,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
     name = "VM-K3S-SERVER-04"
     node_name = "HYPERVISOR-02"
-    vm_id = 204
+    vm_id = 304
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = false
@@ -136,7 +136,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
         enabled = true
     }
     clone {
-        vm_id = 10000
+        vm_id = 5001
         full = true
     }
     cpu {
@@ -144,7 +144,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
         sockets = 2
     }
     disk {
-        datastore_id = "storage-01-iscsi"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "scsi0"
         size = 100
     }
@@ -156,12 +156,12 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
         model = "virtio"
     }
     initialization {
-        datastore_id = "local-lvm"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.0.174/24"
-                gateway = "192.168.0.1"
+                address = "192.168.10.184/24"
+                gateway = "192.168.10.1"
             }
         }
     }
@@ -169,7 +169,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
     name = "VM-K3S-SERVER-05"
     node_name = "HYPERVISOR-02"
-    vm_id = 205
+    vm_id = 305
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = false
@@ -178,7 +178,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
         enabled = true
     }
     clone {
-        vm_id = 10000
+        vm_id = 5001
         full = true
     }
     cpu {
@@ -186,7 +186,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
         sockets = 2
     }
     disk {
-        datastore_id = "storage-01-iscsi"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "scsi0"
         size = 100
     }
@@ -198,12 +198,12 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
         model = "virtio"
     }
     initialization {
-        datastore_id = "local-lvm"
+        datastore_id = "storage-01-zfs-iscsi"
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.0.175/24"
-                gateway = "192.168.0.1"
+                address = "192.168.10.185/24"
+                gateway = "192.168.10.1"
             }
         }
     }
