@@ -1,5 +1,5 @@
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
-    name = "VM-K3S-SERVER-01"
+    name = "vm-k3s-server-01"
     node_name = "HYPERVISOR-02"
     vm_id = 301
     tags = ["kubernetes", "master", "glusterfs", "ubuntu-2204"]
@@ -41,7 +41,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
     }
 }
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
-    name = "VM-K3S-SERVER-02"
+    name = "vm-k3s-server-02"
     node_name = "HYPERVISOR-02"
     vm_id = 302
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
@@ -83,7 +83,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
     }
 }
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
-    name = "VM-K3S-SERVER-03"
+    name = "vm-k3s-server-03"
     node_name = "HYPERVISOR-02"
     vm_id = 303
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
@@ -125,7 +125,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
     }
 }
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
-    name = "VM-K3S-SERVER-04"
+    name = "vm-k3s-server-04"
     node_name = "HYPERVISOR-02"
     vm_id = 304
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
@@ -167,7 +167,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
     }
 }
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
-    name = "VM-K3S-SERVER-05"
+    name = "vm-k3s-server-05"
     node_name = "HYPERVISOR-02"
     vm_id = 305
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
