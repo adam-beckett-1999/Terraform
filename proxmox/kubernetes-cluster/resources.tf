@@ -1,6 +1,6 @@
 resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
     name = "vm-k3s-server-01"
-    node_name = "HYPERVISOR-02"
+    node_name = "HYPERVISOR-02" # test
     vm_id = 301
     tags = ["kubernetes", "master", "glusterfs", "ubuntu-2204"]
     on_boot = true
