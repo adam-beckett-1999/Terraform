@@ -13,6 +13,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
         vm_id = 5001
         full = true
     }
+    bios = "ovmf"
     cpu {
         cores = 4
         sockets = 2
@@ -59,6 +60,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
         vm_id = 5001
         full = true
     }
+    bios = "ovmf"
     cpu {
         cores = 4
         sockets = 2
@@ -105,6 +107,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
         vm_id = 5001
         full = true
     }
+    bios = "ovmf"
     cpu {
         cores = 4
         sockets = 2
@@ -151,6 +154,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
         vm_id = 5001
         full = true
     }
+    bios = "ovmf"
     cpu {
         cores = 4
         sockets = 2
@@ -197,6 +201,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
         vm_id = 5001
         full = true
     }
+    bios = "ovmf"
     cpu {
         cores = 4
         sockets = 2
