@@ -4,7 +4,8 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
     vm_id = 301
     tags = ["kubernetes", "master", "glusterfs", "ubuntu-2204"]
     on_boot = true
-    started = false
+    started = true
+    stop_on_destroy = true
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -51,7 +52,8 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
     vm_id = 302
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
     on_boot = true
-    started = false
+    started = true
+    stop_on_destroy = true
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -98,7 +100,8 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
     vm_id = 303
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
     on_boot = true
-    started = false
+    started = true
+    stop_on_destroy = true
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -145,7 +148,8 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
     vm_id = 304
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
     on_boot = true
-    started = false
+    started = true
+    stop_on_destroy = true
     keyboard_layout = "en-gb"
     agent {
         enabled = true
@@ -192,7 +196,8 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
     vm_id = 305
     tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
     on_boot = true
-    started = false
+    started = true
+    stop_on_destroy = true
     keyboard_layout = "en-gb"
     agent {
         enabled = true
