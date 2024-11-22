@@ -16,6 +16,9 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
     cpu {
         cores = 4
         sockets = 2
+        type = host
+        numa = true
+        units = 1024
     }
     disk {
         datastore_id = "storage-01-zfs-iscsi"
@@ -24,6 +27,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
     }
     memory {
         dedicated = 8192
+        floating  = 1024
     }
     network_device {
         bridge = "vmbr0"
@@ -58,6 +62,9 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
     cpu {
         cores = 4
         sockets = 2
+        type = host
+        numa = true
+        units = 1024
     }
     disk {
         datastore_id = "storage-01-zfs-iscsi"
@@ -66,6 +73,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
     }
     memory {
         dedicated = 8192
+        floating  = 1024
     }
     network_device {
         bridge = "vmbr0"
@@ -100,6 +108,9 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
     cpu {
         cores = 4
         sockets = 2
+        type = host
+        numa = true
+        units = 1024
     }
     disk {
         datastore_id = "storage-01-zfs-iscsi"
@@ -108,6 +119,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
     }
     memory {
         dedicated = 8192
+        floating  = 1024
     }
     network_device {
         bridge = "vmbr0"
@@ -142,6 +154,9 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
     cpu {
         cores = 4
         sockets = 2
+        type = host
+        numa = true
+        units = 1024
     }
     disk {
         datastore_id = "storage-01-zfs-iscsi"
@@ -150,6 +165,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
     }
     memory {
         dedicated = 8192
+        floating  = 1024
     }
     network_device {
         bridge = "vmbr0"
@@ -184,6 +200,9 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
     cpu {
         cores = 4
         sockets = 2
+        type = host
+        numa = true
+        units = 1024
     }
     disk {
         datastore_id = "storage-01-zfs-iscsi"
@@ -192,6 +211,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
     }
     memory {
         dedicated = 8192
+        floating  = 1024
     }
     network_device {
         bridge = "vmbr0"
