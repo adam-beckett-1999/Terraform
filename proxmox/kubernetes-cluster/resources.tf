@@ -2,7 +2,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
     name = "vm-k3s-server-01"
     node_name = "HYPERVISOR-02"
     vm_id = 301
-    tags = ["kubernetes", "master", "glusterfs", "ubuntu-2204"]
+    tags = ["kubernetes", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = true
     stop_on_destroy = true
@@ -39,7 +39,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.10.181/24"
+                address = "192.168.10.191/24"
                 gateway = "192.168.10.1"
             }
         }
@@ -49,7 +49,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
     name = "vm-k3s-server-02"
     node_name = "HYPERVISOR-02"
     vm_id = 302
-    tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
+    tags = ["kubernetes", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = true
     stop_on_destroy = true
@@ -86,7 +86,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.10.182/24"
+                address = "192.168.10.192/24"
                 gateway = "192.168.10.1"
             }
         }
@@ -96,7 +96,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
     name = "vm-k3s-server-03"
     node_name = "HYPERVISOR-02"
     vm_id = 303
-    tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
+    tags = ["kubernetes", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = true
     stop_on_destroy = true
@@ -133,7 +133,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.10.183/24"
+                address = "192.168.10.193/24"
                 gateway = "192.168.10.1"
             }
         }
@@ -143,7 +143,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
     name = "vm-k3s-server-04"
     node_name = "HYPERVISOR-02"
     vm_id = 304
-    tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
+    tags = ["kubernetes", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = true
     stop_on_destroy = true
@@ -180,7 +180,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.10.184/24"
+                address = "192.168.10.194/24"
                 gateway = "192.168.10.1"
             }
         }
@@ -190,7 +190,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
     name = "vm-k3s-server-05"
     node_name = "HYPERVISOR-02"
     vm_id = 305
-    tags = ["kubernetes", "worker", "glusterfs", "ubuntu-2204"]
+    tags = ["kubernetes", "glusterfs", "ubuntu-2204"]
     on_boot = true
     started = true
     stop_on_destroy = true
@@ -227,7 +227,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
         interface = "ide0"
         ip_config {
             ipv4 {
-                address = "192.168.10.185/24"
+                address = "192.168.10.195/24"
                 gateway = "192.168.10.1"
             }
         }
