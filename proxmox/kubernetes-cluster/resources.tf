@@ -16,7 +16,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_01" {
     cpu {
         cores = 4
         sockets = 2
-        type = host
+        type = "host"
         numa = true
         units = 1024
     }
@@ -62,7 +62,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_02" {
     cpu {
         cores = 4
         sockets = 2
-        type = host
+        type = "host"
         numa = true
         units = 1024
     }
@@ -108,7 +108,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_03" {
     cpu {
         cores = 4
         sockets = 2
-        type = host
+        type = "host"
         numa = true
         units = 1024
     }
@@ -154,7 +154,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_04" {
     cpu {
         cores = 4
         sockets = 2
-        type = host
+        type = "host"
         numa = true
         units = 1024
     }
@@ -200,7 +200,7 @@ resource "proxmox_virtual_environment_vm" "vm_k3s_server_05" {
     cpu {
         cores = 4
         sockets = 2
-        type = host
+        type = "host"
         numa = true
         units = 1024
     }
